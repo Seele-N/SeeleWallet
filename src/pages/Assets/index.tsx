@@ -8,6 +8,7 @@ import {
     Table,
     Icon,
     Divider,
+    Statistic,
   } from 'semantic-ui-react'
   import {Link} from 'react-router-dom'
   import styled from 'styled-components'
@@ -30,18 +31,18 @@ const Assets: React.FC = () => {
             <Grid stackable columns={2} verticalAlign='middle'>
                 <Grid.Row textAlign='left' verticalAlign='middle'>
                     <Grid.Column width= '6' style={{ paddingBottom: '0.5em', paddingTop: '0.5em' }}>
-                        <Header as='h4'>Seele Chain</Header>
+                        <Header as='h4' color= 'grey'>Seele Chain</Header>
                     </Grid.Column>
                     <Grid.Column width= '10' style={{ paddingBottom: '0.5em', paddingTop: '0.5em' }}>
-                        <Header as='h4' style={{ borderBottom: '1px dotted #000',display: 'inline-block'}}>seele1ca6t02quxh9wcdc6vnaatwr8f8s5cxdsqk44wx<Icon name= 'copy outline'/></Header>
+                        <Header as={Link} color= 'teal'  style={{ fontSize: '16px',borderBottom: '1px dotted #000',display: 'inline-block'}}>seele1ca6t02quxh9wcdc6vnaatwr8f8s5cxdsqk44wx<Icon name= 'copy outline'/></Header>
                     </Grid.Column>
                 </Grid.Row>
                 <Grid.Row textAlign='left' verticalAlign='middle'>
                     <Grid.Column width= '6' style={{ paddingBottom: '0.5em', paddingTop: '0.5em' }}>
-                        <Header as='h4'>Ethereum Chain</Header>
+                        <Header as='h4' color= 'grey'>Evm Address</Header>
                     </Grid.Column>
                     <Grid.Column width= '10' style={{ paddingBottom: '0.5em', paddingTop: '0.5em' }}>
-                        <Header as='h4' style={{ borderBottom: '1px dotted #000',display: 'inline-block'}}>0x264567b2f06D419093313ae8539fb40167Ba349C<Icon name= 'copy outline'/></Header>
+                        <Header as={Link} color= 'teal' style={{ fontSize: '16px',borderBottom: '1px dotted #000',display: 'inline-block'}}>0x264567b2f06D419093313ae8539fb40167Ba349C<Icon name= 'copy outline'/></Header>
                     </Grid.Column>
                 </Grid.Row>
             </Grid>
@@ -53,9 +54,9 @@ const Assets: React.FC = () => {
                 <Table striped  unstackable>
                 <Table.Header>
                     <Table.Row>
-                    <Table.HeaderCell style={{ fontSize: '1.12em' }}>Token</Table.HeaderCell>
-                    <Table.HeaderCell style={{ fontSize: '1.12em' }}>Ethereum Mainnet</Table.HeaderCell>
-                    <Table.HeaderCell style={{ fontSize: '1.12em' }}>Seele Chain</Table.HeaderCell>
+                    <Table.HeaderCell  ><Header color= 'grey' as= 'h4'>Token</Header></Table.HeaderCell>
+                    <Table.HeaderCell  ><Header color= 'grey' as= 'h4'>Ethereum Mainnet</Header></Table.HeaderCell>
+                    <Table.HeaderCell  ><Header color= 'grey' as= 'h4'>Seele Chain</Header></Table.HeaderCell>
                     </Table.Row>
                 </Table.Header>
                 <Table.Body>
@@ -66,9 +67,9 @@ const Assets: React.FC = () => {
                                 SNP
                             </Header>
                         </Table.Cell>
-                        <Table.Cell ><p style={{fontSize: '16px', fontWeight: 700, color: 'teal'}}>1,088.1800</p></Table.Cell>
+                        <Table.Cell ><Statistic color='teal' size= 'mini'><Statistic.Value>1,088.1800</Statistic.Value></Statistic></Table.Cell>
 
-                        <Table.Cell><p style={{fontSize: '16px', fontWeight: 700,color: 'teal'}}>682.28</p></Table.Cell>
+                        <Table.Cell><Statistic color='teal' size= 'mini'><Statistic.Value>682.28</Statistic.Value></Statistic></Table.Cell>
                     </Table.Row>
                     <Table.Row>
                         <Table.Cell >
@@ -78,9 +79,9 @@ const Assets: React.FC = () => {
                             </Header>
                         </Table.Cell>
 
-                        <Table.Cell ><p style={{fontSize: '16px', fontWeight: 700,color: 'teal'}}>1,036,598.2300</p></Table.Cell>
+                        <Table.Cell ><Statistic color='teal' size= 'mini'><Statistic.Value>1,036,598.2300</Statistic.Value></Statistic></Table.Cell>
                         
-                        <Table.Cell><p style={{fontSize: '16px', fontWeight: 700,color: 'teal'}}>36,598.2300</p></Table.Cell>
+                        <Table.Cell><Statistic color='teal' size= 'mini'><Statistic.Value>36,598.2300</Statistic.Value></Statistic></Table.Cell>
                     </Table.Row>
                 </Table.Body>
                 </Table>
