@@ -1,0 +1,43 @@
+import i18n from 'i18next'
+import { initReactI18next } from 'react-i18next'
+import LanguageDetector from "i18next-browser-languagedetector";
+import en from '../locales/en.json'
+import zh from '../locales/zh.json'
+import { storeCachedData, fetchCachedData } from './cache'
+
+export const AppCachedKeys = {
+  AppLanguage: `AppLanguage`,
+  Version: `Version`,
+}
+
+i18n
+  .use(LanguageDetector)
+  .use(initReactI18next).init({
+  resources: {
+    en: {
+      translation:en
+    },
+    zh: {
+      translation:zh
+    },
+  },
+  fallbackLng: 'en',
+  interpolation: {
+    escapeValue: false,
+  },
+})
+
+export const changeLanguage = (lan: 'en' | 'zh') => {
+  if (lan.indexOf('zh') !== -1) {
+    i18n.changeLanguage('zh')
+  } else {
+    i18n.changeLanguage('en')
+  }
+  storeCachedData(AppCachedKeys.AppLanguage, lan)
+}
+
+export const currentLanguage = (): 'en' | 'zh' | null => {
+  return fetchCachedData<'en' | 'zh'>(AppCachedKeys.AppLanguage)
+}
+
+export default i18n
