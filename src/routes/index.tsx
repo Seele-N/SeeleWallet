@@ -9,9 +9,14 @@ const CreateNewWalletStep2 = lazy(() => import('../pages/CreateNewWalletStep2'))
 const CreateNewWalletStep3 = lazy(() => import('../pages/CreateNewWalletStep3'))
 const CreateNewWalletStep4 = lazy(() => import('../pages/CreateNewWalletStep4'))
 const Assets = lazy(() => import('../pages/Assets'))
+const Bridge = lazy(() => import('../pages/Bridge'))
+const Stake = lazy(() => import('../pages/Stake'))
+const Validators = lazy(() => import('../pages/Validators'))
+const Governance = lazy(() => import('../pages/Governance'))
+const Apps = lazy(() => import('../pages/Apps'))
+
 const Transactions = lazy(() => import('../pages/Transactions'))
 const Transaction = lazy(() => import('../pages/Transaction'))
-const Validators = lazy(() => import('../pages/Validators'))
 const Validator = lazy(() => import('../pages/Validator'))
 const NotFoundPage = lazy(() => import('../pages/404'))
 const Containers: CustomRouter.Route[] = [
@@ -52,6 +57,37 @@ const Containers: CustomRouter.Route[] = [
     comp: Assets,
   },
   {
+    name: 'Bridge',
+    path: '/bridge',
+    exact: true,
+    comp: Bridge,
+  },
+  {
+    name: 'Stake',
+    path: '/stake',
+    exact: true,
+    comp: Stake,
+  },
+  {
+    name: 'Validators',
+    path: '/validators',
+    exact: true,
+    comp: Validators,
+  },
+  {
+    name: 'Governance',
+    path: '/governance',
+    exact: true,
+    comp: Governance,
+  },
+  {
+    name: 'Apps',
+    path: '/apps',
+    exact: true,
+    comp: Apps,
+  },
+
+  {
     name: 'Transactions',
     path: '/transactions',
     exact: true,
@@ -63,12 +99,7 @@ const Containers: CustomRouter.Route[] = [
     exact: true,
     comp: Transaction,
   },
-  {
-    name: 'Validators',
-    path: '/validators',
-    exact: true,
-    comp: Validators,
-  },
+  
   {
     name: 'Validator',
     path: '/validator/:address',
