@@ -131,7 +131,7 @@ const StyledItem = styled.div`
 
 const AppMenu: React.FC = () => {
     const [t] = useTranslation()
-    const [activeItem,setActiveItem] = useState('assets')
+    const [activeItem,setActiveItem] = useState('home')
     const handleItemClick = (e:any, {name}:MenuItemProps) => {setActiveItem(name)}
     
     return (
@@ -143,14 +143,14 @@ const AppMenu: React.FC = () => {
                 testnet-alpha
             </Label>
             <Divider/>
-            <Menu.Item name='assets'
-            active={activeItem === 'assets'}
+            <Menu.Item name='home'
+            active={activeItem === 'home'}
             as={Link}
             to='/'
             onClick = {handleItemClick}
             >
                 <StyledItem>
-                    <Header as='h4'><Icon name= 'chart pie' color= 'teal'/>Assets</Header>
+                    <Header as='h4'><Icon name= 'chart pie' color= 'teal'/>Home</Header>
                 </StyledItem>
             </Menu.Item>
 

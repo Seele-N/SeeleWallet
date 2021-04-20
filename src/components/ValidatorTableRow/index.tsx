@@ -1,10 +1,14 @@
 import React,{useState} from 'react'
 import {
     Table,
+    Button,
+    Image,
+    Header,
   } from 'semantic-ui-react'
   import Skeleton from "react-skeleton-loader";
   import {NavLink} from "react-router-dom";
   import styled from "styled-components";
+  import snplogo from '../../assets/images/snp.png'
   
   interface  ValidatorTableRowProps{
     data:any;
@@ -20,18 +24,20 @@ import {
 const ValidatorTableRow: React.FC<ValidatorTableRowProps> = ({index,data}) => {
     return (
         <Table.Row>
-            <Table.Cell >{data.account_address ? index: <Skeleton />}</Table.Cell>
 
             <Table.Cell >{data.moniker ? (
-                  <StyledLink  to={`/validator/${data.account_address}`}>
-                    {data.moniker}
-                  </StyledLink>
+                  <Header as='h4'>
+                    <Image src= {snplogo} size= 'tiny'/>
+                      {data.moniker}
+                  </Header>
                 ) : (
                     <Skeleton />
                 )}
             </Table.Cell>
             <Table.Cell>{data.delegator_shares ? `${Number(data.delegator_shares).toFixed(4)}(${(Number(data.voting_power)/100).toFixed(2)+'%'})` : <Skeleton />}</Table.Cell>
             <Table.Cell>{data.commission_rate ? <>{Number(data.commission_rate*100).toFixed(2)}%</> : <Skeleton />}</Table.Cell>
+            <Table.Cell>{data.status ? <Header as='h4' color='blue'>Bonded</Header> : <Skeleton />}</Table.Cell>
+            <Table.Cell>{data.moniker ? <Button color='twitter'>Delegate</Button> : <Skeleton />}</Table.Cell>
         </Table.Row>
     )
 }

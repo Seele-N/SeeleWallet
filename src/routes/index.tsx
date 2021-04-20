@@ -8,7 +8,7 @@ const CreateNewWalletStep1 = lazy(() => import('../pages/CreateNewWalletStep1'))
 const CreateNewWalletStep2 = lazy(() => import('../pages/CreateNewWalletStep2'))
 const CreateNewWalletStep3 = lazy(() => import('../pages/CreateNewWalletStep3'))
 const CreateNewWalletStep4 = lazy(() => import('../pages/CreateNewWalletStep4'))
-const Assets = lazy(() => import('../pages/Assets'))
+const Home = lazy(() => import('../pages/Home'))
 const Bridge = lazy(() => import('../pages/Bridge'))
 const Stake = lazy(() => import('../pages/Stake'))
 const Validators = lazy(() => import('../pages/Validators'))
@@ -54,7 +54,7 @@ const Containers: CustomRouter.Route[] = [
     name: 'Home',
     path: '/',
     exact: true,
-    comp: Assets,
+    comp: Home,
   },
   {
     name: 'Bridge',

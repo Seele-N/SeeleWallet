@@ -20,7 +20,7 @@ import {
 
 
 
-const Assets: React.FC = () => {
+const Home: React.FC = () => {
     
   return (
     <div>
@@ -54,9 +54,9 @@ const Assets: React.FC = () => {
                 <Table striped  unstackable>
                 <Table.Header>
                     <Table.Row>
-                    <Table.HeaderCell  ><Header color= 'grey' as= 'h4'>Token</Header></Table.HeaderCell>
-                    <Table.HeaderCell  ><Header color= 'grey' as= 'h4'>Ethereum Mainnet</Header></Table.HeaderCell>
-                    <Table.HeaderCell  ><Header color= 'grey' as= 'h4'>Seele Chain</Header></Table.HeaderCell>
+                    <Table.HeaderCell  ><Header color= 'grey' as= 'h5'>Token</Header></Table.HeaderCell>
+                    <Table.HeaderCell  ><Header color= 'grey' as= 'h5'>Ethereum Mainnet</Header></Table.HeaderCell>
+                    <Table.HeaderCell  ><Header color= 'grey' as= 'h5'>Seele Chain</Header></Table.HeaderCell>
                     </Table.Row>
                 </Table.Header>
                 <Table.Body>
@@ -91,4 +91,4 @@ const Assets: React.FC = () => {
   )
 }
 
-export default Assets
+export default Home

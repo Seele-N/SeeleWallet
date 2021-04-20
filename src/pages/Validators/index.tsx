@@ -11,6 +11,8 @@ import {
   Button,
   Pagination,
   PaginationProps,
+  Statistic,
+  Divider,
 } from 'semantic-ui-react'
 import {useFetch, useTimer} from "../../hooks";
 import constants from "../../constants";
@@ -18,6 +20,7 @@ import ValidatorTableRow from "../../components/ValidatorTableRow";
 import {_,empty} from "../../lib/scripts";
 import { useTranslation } from 'react-i18next'
 import i18n from '../../utils/i18n'
+
 
 const PAGE_SIZE:number = 20;
 var   blockbefore = 0
@@ -42,22 +45,46 @@ const Validators: React.FC = () => {
 	);
 
   return (
-    <Container style={{ padding: '1em 1em',background: '#f3f5f9' }}>
-      <Header as='h3' >{i18n.t('common.validators_up')}</Header>
-      <Segment raised>
-        <Table striped  unstackable>
-          <Table.Header>
-            <Table.Row>
-              <Table.HeaderCell style={{ fontSize: '1.12em' }}>{i18n.t('common.rank')}</Table.HeaderCell>
-              <Table.HeaderCell style={{ fontSize: '1.12em' }}>{i18n.t('common.validator')}</Table.HeaderCell>
-              <Table.HeaderCell style={{ fontSize: '1.12em' }}>{i18n.t('common.voting_power')}</Table.HeaderCell>
-              <Table.HeaderCell style={{ fontSize: '1.12em' }}>{i18n.t('common.fee')}</Table.HeaderCell>
-            </Table.Row>
-          </Table.Header>
-          <Table.Body>{tableBodyRender}</Table.Body>
-        </Table>
-      </Segment>
-    </Container>
+    <Segment raised>
+      <Container style={{ padding: '1em 1em',background: '#f3f5f9' }}>
+        <Header as='h3' >Validators</Header>
+        <Divider/>
+        <Statistic.Group widths='four'>
+          <Statistic>
+            <Statistic.Value>2</Statistic.Value>
+            <Statistic.Label>Total Validators</Statistic.Label>
+          </Statistic>
+
+          <Statistic>
+            <Statistic.Value>2</Statistic.Value>
+            <Statistic.Label>Bonded Validators</Statistic.Label>
+          </Statistic>
+
+          <Statistic>
+          <Statistic.Value>0</Statistic.Value>
+            <Statistic.Label>Unbonding Validators</Statistic.Label>
+          </Statistic>
+
+          <Statistic>
+            <Statistic.Value>0</Statistic.Value>
+            <Statistic.Label>Unbonded Validators</Statistic.Label>
+          </Statistic>
+        </Statistic.Group>
+        
+          <Table striped  unstackable>
+            <Table.Header>
+              <Table.Row>
+                <Table.HeaderCell ><Header color= 'grey' as= 'h5'>Validator</Header></Table.HeaderCell>
+                <Table.HeaderCell ><Header color= 'grey' as= 'h5'>Staked Amount(SNP)</Header></Table.HeaderCell>
+                <Table.HeaderCell ><Header color= 'grey' as= 'h5'>Fee</Header></Table.HeaderCell>
+                <Table.HeaderCell ><Header color= 'grey' as= 'h5'>Status</Header></Table.HeaderCell>
+                <Table.HeaderCell ><Header color= 'grey' as= 'h5'>Actions</Header></Table.HeaderCell>
+              </Table.Row>
+            </Table.Header>
+            <Table.Body>{tableBodyRender}</Table.Body>
+          </Table>
+      </Container>
+    </Segment>
   )
 }
 
