@@ -31,13 +31,13 @@ const ValidatorTableRow: React.FC<ValidatorTableRowProps> = ({index,data}) => {
                       {data.moniker}
                   </Header>
                 ) : (
-                    <Skeleton />
+                    <Skeleton width={"80px"}/>
                 )}
             </Table.Cell>
-            <Table.Cell>{data.delegator_shares ? `${Number(data.delegator_shares).toFixed(4)}(${(Number(data.voting_power)/100).toFixed(2)+'%'})` : <Skeleton />}</Table.Cell>
-            <Table.Cell>{data.commission_rate ? <>{Number(data.commission_rate*100).toFixed(2)}%</> : <Skeleton />}</Table.Cell>
-            <Table.Cell>{data.status ? <Header as='h4' color='blue'>Bonded</Header> : <Skeleton />}</Table.Cell>
-            <Table.Cell>{data.moniker ? <Button color='twitter'>Delegate</Button> : <Skeleton />}</Table.Cell>
+            <Table.Cell>{data.delegator_shares ? `${Number(data.delegator_shares).toFixed(4)}(${(Number(data.voting_power)/100).toFixed(2)+'%'})` : <Skeleton width={"80px"}/>}</Table.Cell>
+            <Table.Cell>{data.commission_rate ? <>{Number(data.commission_rate*100).toFixed(2)}%</> : <Skeleton width={"40px"}/>}</Table.Cell>
+            <Table.Cell>{data.status ? <Header as='h4' color='blue'>Bonded</Header> : <Skeleton width={"40px"}/>}</Table.Cell>
+            <Table.Cell>{data.moniker ? <Button color='twitter'>Delegate</Button> : <Skeleton width={"80px"}/>}</Table.Cell>
         </Table.Row>
     )
 }

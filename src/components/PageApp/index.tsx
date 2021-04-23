@@ -38,7 +38,7 @@ const StyledPage = styled.div`
   flex-direction: row;
   height: calc(100%);
   width: calc(100%);
-  background: linear-gradient(75deg,#f1f8f2,65%, #e0f8e4)
+  background: linear-gradient(75deg,#f1f8f2,75%, #e0f8e4)
 `
 
 const PageApp: React.FC = ({ children }) => {

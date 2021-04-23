@@ -19,12 +19,23 @@ import {
   import i18n from '../../utils/i18n'
 
 
+const StyledSegment = styled(Segment)`
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  @media (max-width: 1432px) {
+    max-width: 768px;
+  };
+  @media (max-width: 1050px) {
+    max-width: 485px;
+  }
+`;
 
 const Home: React.FC = () => {
     
   return (
     <div>
-        <Segment raised>
+        <StyledSegment raised>
             <Container style={{ padding: '1em 1em',background: '#f2f7f5' }}>
             <Header as='h3' >Account Details</Header>
             <Divider/>
@@ -47,8 +58,8 @@ const Home: React.FC = () => {
                 </Grid.Row>
             </Grid>
             </Container>
-        </Segment>
-        <Segment raised>
+        </StyledSegment>
+        <StyledSegment raised>
             <Container style={{ padding: '1em 1em',background: '#f2f7f5' }}>
             <Header as='h3' >My Balances</Header>
                 <Table striped  unstackable>
@@ -86,7 +97,7 @@ const Home: React.FC = () => {
                 </Table.Body>
                 </Table>
             </Container>
-        </Segment>
+        </StyledSegment>
     </div>
   )
 }

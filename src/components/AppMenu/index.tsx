@@ -194,7 +194,7 @@ const AppMenu: React.FC = () => {
             onClick = {handleItemClick}
             >
                 <StyledItem>
-                    <Header as='h4'><Icon name= 'legal' color= 'teal'/>Governance</Header>
+                    <Header as='h4'><Icon name= 'university' color= 'teal'/>Governance</Header>
                 </StyledItem>
             </Menu.Item>
             <Menu.Item name='apps'
@@ -204,7 +204,17 @@ const AppMenu: React.FC = () => {
             onClick = {handleItemClick}
             >
                 <StyledItem>
-                    <Header as='h4'><Icon name= 'cogs' color= 'teal'/>Apps</Header>
+                    <Header as='h4'><Icon name= 'cloud' color= 'teal'/>Apps</Header>
+                </StyledItem>
+            </Menu.Item>
+            <Menu.Item name='setting'
+            active={activeItem === 'setting'}
+            as={Link}
+            to='/setting'
+            onClick = {handleItemClick}
+            >
+                <StyledItem>
+                    <Header as='h4'><Icon name= 'cog' color= 'teal'/>Setting</Header>
                 </StyledItem>
             </Menu.Item>
             <Divider/>

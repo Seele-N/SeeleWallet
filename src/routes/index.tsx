@@ -14,6 +14,9 @@ const Stake = lazy(() => import('../pages/Stake'))
 const Validators = lazy(() => import('../pages/Validators'))
 const Governance = lazy(() => import('../pages/Governance'))
 const Apps = lazy(() => import('../pages/Apps'))
+const Setting = lazy(() => import('../pages/Setting'))
+const Proposal = lazy(() => import('../pages/Proposal'))
+
 
 const Transactions = lazy(() => import('../pages/Transactions'))
 const Transaction = lazy(() => import('../pages/Transaction'))
@@ -86,6 +89,19 @@ const Containers: CustomRouter.Route[] = [
     exact: true,
     comp: Apps,
   },
+  {
+    name: 'Setting',
+    path: '/setting',
+    exact: true,
+    comp: Setting,
+  },
+  {
+    name: 'Proposal',
+    path: '/proposal/:id',
+    exact: true,
+    comp: Proposal,
+  },
+
 
   {
     name: 'Transactions',

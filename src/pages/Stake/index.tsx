@@ -59,17 +59,29 @@ import {
   ]
   
 
+const StyledSegment = styled(Segment)`
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  @media (max-width: 1432px) {
+    max-width: 768px;
+  };
+  @media (max-width: 1050px) {
+    max-width: 485px;
+  }
+`;
+
 const Stake: React.FC = () => {
     
   return (
     <div>
-        <Segment raised>
+        <StyledSegment raised>
             <Container style={{ padding: '1em 1em',background: '#f2f7f5' }}>
             <Header as='h3' >Stake</Header>
             <Divider/>
             <Tab panes={panes} renderActiveOnly={false}/>
             </Container>
-        </Segment>
+        </StyledSegment>
     </div>
   )
 }

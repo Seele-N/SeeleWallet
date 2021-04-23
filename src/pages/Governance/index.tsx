@@ -80,17 +80,30 @@ import {
     },
   ]
 
+
+const StyledSegment = styled(Segment)`
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  @media (max-width: 1432px) {
+    max-width: 768px;
+  };
+  @media (max-width: 1050px) {
+    max-width: 485px;
+  }
+`;
+
 const Governance: React.FC = () => {
     
   return (
-    <Segment raised>
+    <StyledSegment raised>
         <Container style={{ padding: '1em 1em',background: '#f2f7f5' }}>
         <Header as='h3' >Governance</Header>
         <Divider/>
         <Header color= 'grey' as= 'h5'>You may see all proposals and cast your votes here.</Header>
         <Tab panes={panes} renderActiveOnly={false}/>
         </Container>
-    </Segment>
+    </StyledSegment>
   )
 }
 

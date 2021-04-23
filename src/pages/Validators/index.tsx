@@ -14,6 +14,7 @@ import {
   Statistic,
   Divider,
 } from 'semantic-ui-react'
+import styled from 'styled-components'
 import {useFetch, useTimer} from "../../hooks";
 import constants from "../../constants";
 import ValidatorTableRow from "../../components/ValidatorTableRow";
@@ -22,8 +23,20 @@ import { useTranslation } from 'react-i18next'
 import i18n from '../../utils/i18n'
 
 
-const PAGE_SIZE:number = 20;
+const PAGE_SIZE:number = 10;
 var   blockbefore = 0
+
+const StyledSegment = styled(Segment)`
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  @media (max-width: 1432px) {
+    max-width: 768px;
+  };
+  @media (max-width: 1050px) {
+    max-width: 485px;
+  }
+`;
 
 const Validators: React.FC = () => {
   
@@ -45,8 +58,8 @@ const Validators: React.FC = () => {
 	);
 
   return (
-    <Segment raised>
-      <Container style={{ padding: '1em 1em',background: '#f3f5f9' }}>
+    <StyledSegment raised>
+      <Container style={{ padding: '1em 1em',background: '#f2f7f5' }}>
         <Header as='h3' >Validators</Header>
         <Divider/>
         <Statistic.Group widths='four'>
@@ -84,7 +97,7 @@ const Validators: React.FC = () => {
             <Table.Body>{tableBodyRender}</Table.Body>
           </Table>
       </Container>
-    </Segment>
+    </StyledSegment>
   )
 }
 
