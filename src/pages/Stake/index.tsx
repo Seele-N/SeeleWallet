@@ -75,6 +75,7 @@ const Stake: React.FC = () => {
     
   return (
     <div>
+        <Spacer/>
         <StyledSegment raised>
             <Container style={{ padding: '1em 1em',background: '#f2f7f5' }}>
             <Header as='h3' >Stake</Header>

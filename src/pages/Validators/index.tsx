@@ -21,6 +21,7 @@ import ValidatorTableRow from "../../components/ValidatorTableRow";
 import {_,empty} from "../../lib/scripts";
 import { useTranslation } from 'react-i18next'
 import i18n from '../../utils/i18n'
+import Spacer from '../../components/Spacer'
 
 
 const PAGE_SIZE:number = 10;
@@ -58,6 +59,8 @@ const Validators: React.FC = () => {
 	);
 
   return (
+    <div>
+      <Spacer/>
     <StyledSegment raised>
       <Container style={{ padding: '1em 1em',background: '#f2f7f5' }}>
         <Header as='h3' >Validators</Header>
@@ -98,6 +101,7 @@ const Validators: React.FC = () => {
           </Table>
       </Container>
     </StyledSegment>
+    </div>
   )
 }
 

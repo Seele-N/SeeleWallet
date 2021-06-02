@@ -19,10 +19,12 @@ const StyledFooter = styled.div`
 `;
 
 const StyledNav = styled.div`
-  align-items: left;
+  align-items: center;
   display: flex;
-  justify-content: left;
-  flex-direction: column;
+  justify-content: center;
+  flex-direction: row;
+  margin-left: 16px;
+  margin-right: 16px;
 `;
 
 
@@ -31,13 +33,13 @@ const StyledLink = styled.a`
   display: flex;
   justify-content: left;
   margin: 0;
-  color: #5c5c5e;
+  color: #0f0f0f;
   font-weight: 700;
-  padding-left: 16px;
-  padding-right: 16px;
+  padding-left: 8px;
+  padding-right: 8px;
   text-decoration: none;
   &:hover {
-    color: #0f0f0f;
+    color: #5c5c5e;
   }
 `;
 
@@ -47,11 +49,11 @@ function Nav() {
       
       {isMobile?(
         <StyledLink  href="https://discord.gg/bNN5Ae">
-          <Icon name= 'discord' size= 'large'/>Discord
+          <Icon name= 'discord' size= 'large'  color='grey'/>
         </StyledLink>
       ):(
         <StyledLink target="_blank" href="https://discord.gg/bNN5Ae">
-          <Icon name= 'discord' size= 'large'/>Discord
+          <Icon  name= 'discord' size= 'large'  color='grey'/>
         </StyledLink>
       )}
 
@@ -60,27 +62,50 @@ function Nav() {
         <StyledLink
           href="https://github.com/Seele-N/NervLedger-Contract"
         >
-         <Icon name= 'github' size= 'large'/> Github
+         <Icon name= 'telegram' size= 'large'  color='grey'/> 
         </StyledLink>
       ):(
         <StyledLink
           target="_blank"
           href="https://github.com/Seele-N/NervLedger-Contract"
         >
-          <Icon name= 'github' size= 'large'/>Github
+          <Icon name= 'github' size= 'large'  color='grey'/>
         </StyledLink>
       )}
 
     <Spacer size='md'/>
       {isMobile?(
         <StyledLink  href="https://twitter.com/NevrLedger">
-          <Icon name= 'twitter' size= 'large'/>Twitter
+          <Icon name= 'twitter' size= 'large'  color='grey'/>
         </StyledLink>
       ):(
         <StyledLink target="_blank" href="https://twitter.com/NevrLedger">
-          <Icon name= 'twitter' size= 'large'/>Twitter
+          <Icon name= 'twitter' size= 'large'  color='grey'/>
         </StyledLink>
       )}
+
+    <Spacer size='md'/>
+      {isMobile?(
+        <StyledLink  href="https://twitter.com/NevrLedger">
+          <Icon name= 'youtube' size= 'large'  color='grey'/>
+        </StyledLink>
+      ):(
+        <StyledLink target="_blank" href="https://twitter.com/NevrLedger">
+          <Icon name= 'youtube' size= 'large'  color='grey'/>
+        </StyledLink>
+      )}
+
+    <Spacer size='md'/>
+      {isMobile?(
+        <StyledLink  href="https://twitter.com/NevrLedger">
+          <Icon name= 'medium' size= 'large'  color='grey'/>
+        </StyledLink>
+      ):(
+        <StyledLink target="_blank" href="https://twitter.com/NevrLedger">
+          <Icon name= 'medium' size= 'large'  color='grey'/>
+        </StyledLink>
+      )}
+
     </StyledNav>
   );
 }

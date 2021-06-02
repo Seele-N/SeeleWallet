@@ -41,13 +41,24 @@ const StyledPage = styled.div`
   background: linear-gradient(75deg,#f1f8f2,75%, #e0f8e4)
 `
 
+const StyledChildren = styled.div`
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  min-height: calc(100vh-${(props) => props.theme.topBarSize+12}px);
+  width: calc(100%);
+  margin-top: ${(props) => props.theme.topBarSize+12}px;
+`;
+
 const PageApp: React.FC = ({ children }) => {
   return (
     <StyledPage>
         <SideBar/>
         <StyledMain>
             <AppTopBar/>
+            <StyledChildren>
             {children}
+            </StyledChildren>
         </StyledMain>
     </StyledPage>
   )

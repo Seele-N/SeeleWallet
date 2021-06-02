@@ -172,6 +172,7 @@ const Bridge: React.FC = () => {
   const [isFromEth,setIsFromEth] = useState(true)
   return (
     <div>
+        <Spacer/>
         <StyledSegment raised >
             <Container textAlign= 'center' style={{ padding: '1em 1em',background: '#f2f7f5' }}>
                 {
